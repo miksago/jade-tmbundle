@@ -12,96 +12,124 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>^(!!!)\s*([a-zA-Z0-9-_]+)</string>
+			<string>^(!!!)(\s*[a-zA-Z0-9-_]+)?</string>
 			<key>name</key>
-			<string>text.plain.jade</string>
+			<string>keyword.other.doctype.jade</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\(</string>
-			<key>end</key>
-			<string>\)</string>
-			<key>name</key>
-			<string>punctuation.definition.prolog.jade</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>string.quoted.double.jade</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>constant.language.jade</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([a-zA-Z0-9_-]+)\s*(\:|\=)\s*(?!\/)</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>end</key>
-					<string>"</string>
-					<key>name</key>
-					<string>string.quoted.double.jade</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\.</string>
-							<key>name</key>
-							<string>constant.character.escaped.jade</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>'</string>
-					<key>end</key>
-					<string>'</string>
-					<key>name</key>
-					<string>string.quoted.single.jade</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>\\.</string>
-							<key>name</key>
-							<string>constant.character.escaped.jade</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^\s*\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|dd|del|details|dfn|div|dl|dt|em|fieldset|figcaption|figure|footer|form|frame|frameset|h1|h2|h3|h4|h5|h6|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|nav|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|samp|script|section|select|small|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|var_keys|video|\w+)\b(?!:)</string>
-			<key>name</key>
-			<string>meta.tag.jade</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\.[a-zA-Z0-9_-]+</string>
-			<key>name</key>
-			<string>entity.other.attribute-name.class.jade</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>#[a-zA-Z0-9_-]+</string>
-			<key>name</key>
-			<string>entity.other.attribute-name.id.jade</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>//</string>
+			<string>\s*//</string>
 			<key>end</key>
 			<string>$\n?</string>
 			<key>name</key>
 			<string>comment.line.double-slash.jade</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*</string>
+			<key>end</key>
+			<string>(\s+|$)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\.[a-zA-Z0-9_-]+</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.class.jade</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>#[a-zA-Z0-9_-]+</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.id.jade</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>[a-zA-z]</string>
+					<key>name</key>
+					<string>entity.name.tag.jade</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\:.+$</string>
+					<key>name</key>
+					<string>support.class.jade</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(=|-)\s+</string>
+					<key>end</key>
+					<string>$</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.js</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\(</string>
+					<key>end</key>
+					<string>\)</string>
+					<key>name</key>
+					<string>punctuation.definition.prolog.jade</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>string.quoted.double.jade</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>constant.language.jade</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>([a-zA-Z0-9_-]+)\s*(\:|\=)\s*(?!\/)</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>"</string>
+							<key>end</key>
+							<string>"</string>
+							<key>name</key>
+							<string>string.quoted.double.jade</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\\.</string>
+									<key>name</key>
+									<string>constant.character.escaped.jade</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>'</string>
+							<key>end</key>
+							<string>'</string>
+							<key>name</key>
+							<string>string.quoted.single.jade</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\\.</string>
+									<key>name</key>
+									<string>constant.character.escaped.jade</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -116,12 +144,6 @@
 			<string>#\{[^\}]+\}</string>
 			<key>name</key>
 			<string>string.interpolated.jade</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>^\s*\:[^$]+$</string>
-			<key>name</key>
-			<string>support.class.jade</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
