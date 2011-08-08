@@ -5,24 +5,22 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/bin/bash
-
-echo "&lt;pre style='font-family:Menlo; font-size: 22px;'&gt;"
+	<string>#!/usr/bin/env sh
+echo "&lt;pre style='font-family:Menlo; font-size: 12px; word-wrap: break-word;'&gt;"
 jade | sed 's/&lt;/\&amp;lt;/g' | sed 's/&gt;/\&amp;gt;/g'
-echo "&lt;/pre&gt;"</string>
-	<key>fallbackInput</key>
-	<string>document</string>
+echo "&lt;/pre&gt;"
+</string>
 	<key>input</key>
-	<string>selection</string>
+	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@b</string>
 	<key>name</key>
-	<string>Compile and Display Jade</string>
+	<string>Render</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
 	<string>source.jade</string>
 	<key>uuid</key>
-	<string>AEEEF338-EF0F-4276-BB8A-648B09F4A79E</string>
+	<string>4E2866A2-7FAE-4980-84E1-0E8AAB7C36FB</string>
 </dict>
 </plist>
