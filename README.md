@@ -14,6 +14,12 @@ Installation:
     cd ~/Library/Application\ Support/TextMate/Bundles
     git clone git://github.com/miksago/jade-tmbundle Jade.tmbundle
 
+Installation for TextMate 2:
+
+    mkdir -p ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles
+    cd ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles
+    git clone https://github.com/miksago/jade-tmbundle Jade.tmbundle
+
 The bundle currently only includes syntax highlighting.
 
 Patches for additions are always welcome.
