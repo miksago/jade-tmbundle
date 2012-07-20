@@ -141,7 +141,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^(?!\1\s+)</string>
+			<string>^(?!\1\s+)(?=\s*.)</string>
 			<key>name</key>
 			<string>meta.filter.coffee.jade</string>
 			<key>patterns</key>
