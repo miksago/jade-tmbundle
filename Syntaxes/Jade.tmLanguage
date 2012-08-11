@@ -40,13 +40,13 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^ *(//)\s*\S.*$\n?</string>
+			<string>^\s*(//-?)(?:\s*[^-\s]|\s+\S).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.double-slash.jade</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(\s*)(//)\s*$</string>
+			<string>^(\s*)(//-?)\s*$</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>2</key>
@@ -56,7 +56,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^(?!\1\s+)</string>
+			<string>^(?!\1\s+|$)</string>
 			<key>name</key>
 			<string>comment.block.jade</string>
 		</dict>
