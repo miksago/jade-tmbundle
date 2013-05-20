@@ -20,6 +20,11 @@ Installation for TextMate 2:
     cd ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles
     git clone https://github.com/miksago/jade-tmbundle Jade.tmbundle
 
+Installation for Sublime Text 2:
+
+    cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages
+    git clone https://github.com/miksago/jade-tmbundle Jade
+
 The bundle currently only includes syntax highlighting.
 
 Patches for additions are always welcome.
