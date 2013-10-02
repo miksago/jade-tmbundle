@@ -16,8 +16,8 @@ Installation:
 
 Installation for TextMate 2:
 
-    mkdir -p ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles
-    cd ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles
+    mkdir -p ~/Library/Application\ Support/TextMate/Managed/Bundles
+    cd ~/Library/Application\ Support/TextMate/Managed/Bundles
     git clone https://github.com/miksago/jade-tmbundle Jade.tmbundle
 
 Installation for Sublime Text 2:
