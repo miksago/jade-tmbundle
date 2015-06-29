@@ -227,7 +227,15 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(-|=|!=)</string>
+			<string>^\s*(-|=|!=|if|else if|else)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.jade</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>$</string>
 			<key>name</key>
@@ -258,16 +266,37 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^((?=(\1)([\w#\.]|$\n?))|^$\n?)</string>
+			<string>^((?=(\1)([\w#\.\=]|$\n?))|^$\n?)</string>
 			<key>name</key>
 			<string>source.js.embedded.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?&lt;=script)\s*\(</string>
+					<string>(?&lt;=script)\s*(\()(.*?\=)?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.script.jade</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.script.jade</string>
+						</dict>
+					</dict>
 					<key>end</key>
-					<string>\)</string>
+					<string>(\))</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.script.jade</string>
+						</dict>
+					</dict>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -314,13 +343,13 @@
 					<key>match</key>
 					<string>\.[\w-]+</string>
 					<key>name</key>
-					<string>meta.tag.attribute.class.jade</string>
+					<string>entity.name.tag.jade</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>#[\w-]+</string>
 					<key>name</key>
-					<string>meta.tag.attribute.id.jade</string>
+					<string>variable.other.jade</string>
 				</dict>
 			</array>
 		</dict>
@@ -338,6 +367,31 @@
 					<string>#tag-stuff</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.entity.jade</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.entity.jade</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
+			<key>name</key>
+			<string>constant.character.entity.jade</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>&amp;</string>
+			<key>name</key>
+			<string>invalid.illegal.bad-ampersand.jade</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -502,12 +556,23 @@
 					<key>include</key>
 					<string>#tag-generic-attribute</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-variable</string>
+				</dict>
 			</array>
+		</dict>
+		<key>tag-variable</key>
+		<dict>
+			<key>match</key>
+			<string>\b(\!?\=[\w\.\[\]]+)</string>
+			<key>name</key>
+			<string>storage.type.jade</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
 	<string>source.jade</string>
 	<key>uuid</key>
-	<string>C5B73B98-5F2A-42E3-9F0E-028A74A9FE4B</string>
+	<string>914CEC52-3DDF-4EBA-9C61-4ACBD06FC855</string>
 </dict>
 </plist>
